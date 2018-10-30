@@ -2,9 +2,6 @@ const Sequelize = require('sequelize');
 const db = new Sequelize('postgres://localhost:5432/ecommerce');
 
 const Ventas = db.define('ventas', {
-  comprador: {
-    type: Sequelize.STRING,
-  },
   producto: {
     type: Sequelize.ARRAY(Sequelize.STRING),
   },
@@ -14,7 +11,7 @@ const Ventas = db.define('ventas', {
   fecha: {
     type: Sequelize.DATE,
   },
-  import: {
+  importe: {
     type: Sequelize.INTEGER
   },
   direccion: {

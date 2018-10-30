@@ -15,6 +15,10 @@ const modelos = {
   Categoria,
 };
 
+
+
+
+
 module.exports = {
   modelos,
   db,

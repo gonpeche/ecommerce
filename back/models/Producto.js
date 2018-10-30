@@ -19,7 +19,7 @@ const Producto = db.define('producto', {
   },
   disponibilidad: {
     type: Sequelize.BOOLEAN,
-    defaultValue: false // VER SI VALE LA PENA
+    defaultValue: true
   }
 });
 
