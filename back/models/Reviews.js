@@ -1,13 +1,13 @@
 const Sequelize = require('sequelize');
 const db = new Sequelize('postgres://localhost:5432/ecommerce');
 
-const User = db.define('user', {
-  nombre: {
+const Reviews = db.define('reviews', {
+  comentario: {
     type: Sequelize.STRING,
   },
-  apellido: {
-    type: Sequelize.STRING,
-  },
+  estrellas: {
+    type: Sequelize.STRING
+  }
 });
-
-module.exports = User 
+// FALTA FK 
+module.exports = Reviews 
