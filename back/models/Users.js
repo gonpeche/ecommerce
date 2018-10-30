@@ -27,3 +27,4 @@ const User = db.define('user', {
     allowNull: true,
   },
 });
+console.log(hola);
