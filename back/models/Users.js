@@ -12,37 +12,37 @@ const User = db.define('user', {
         type: Sequelize.STRING,
         validate: {
             isEmail: true,
-            isUnique: function(value, next) {
+            isUnique: function (value, next) {
                 User.find({
                     where: { email: value },
                 })
-                .then(function(user, error) {
-                    if (error) return next('ESO NO SE PUEDE HACER');
-                    if (user) return next('El mail ya existe');
-                    next();
-                })
-                .catch(error => console.log(error));
+                    .then(function (user, error) {
+                        if (error) return next('ESO NO SE PUEDE HACER');
+                        if (user) return next('El mail ya existe');
+                        next();
+                    })
+                    .catch(error => console.log(error));
             },
         },
     },
-    carrito:{
+    carrito: {
         type: Sequelize.ARRAY(Sequelize.TEXT),
 
     },
-    admin:{
+    admin: {
         type: Sequelize.BOOLEAN,
         defaultValue: false
     },
-    password:{
+    password: {
         type: Sequelize.STRING,
-        validate:{
-            allowNull: false,
+        validate: {
+            /* allowNull: false, */
         }
     },
-    salt:{
+    salt: {
         type: Sequelize.STRING,
     },
-    telefono:{
+    telefono: {
         type: Sequelize.INTEGER,
     }
 });

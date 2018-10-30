@@ -5,6 +5,9 @@ const Ventas = db.define('ventas', {
   producto: {
     type: Sequelize.ARRAY(Sequelize.STRING),
   },
+  cantidad: {
+    type: Sequelize.INTEGER
+  },
   status: {
     type: Sequelize.ENUM('creado', 'procesado', 'cancelado', 'completado'),
   },

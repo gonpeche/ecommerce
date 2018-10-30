@@ -20,6 +20,9 @@ const Producto = db.define('producto', {
   disponibilidad: {
     type: Sequelize.BOOLEAN,
     defaultValue: true
+  },
+  stock: {
+    type: Sequelize.INTEGER
   }
 });
 
