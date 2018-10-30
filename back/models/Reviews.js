@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const db = new Sequelize('postgres://localhost:5432/ecommerce');
 
-const Reviews = db.define('reviews', {
+const Review = db.define('review', {
   comentario: {
     type: Sequelize.STRING,
   },
@@ -10,4 +10,4 @@ const Reviews = db.define('reviews', {
   }
 });
 // FALTA FK 
-module.exports = Reviews 
+module.exports = Review 
