@@ -6,7 +6,7 @@ const Review = db.define('review', {
     type: Sequelize.STRING,
   },
   estrellas: {
-    type: Sequelize.STRING
+    type: Sequelize.INTEGER
   }
 });
 // FALTA FK 

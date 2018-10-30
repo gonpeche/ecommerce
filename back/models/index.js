@@ -15,6 +15,21 @@ const modelos = {
   Categoria,
 };
 
+User.hasMany(Venta, { as: 'Compras' });
+
+User.hasMany(Producto, { as: 'publicaciones' });
+
+Producto.hasMany(Review, { as: 'Reviews' });
+
+User.hasMany(Review, { as: 'userReviews' });
+
+Producto.belongsToMany(Venta, { through: 'ProductoVenta' });
+Venta.belongsToMany(Producto, { through: 'ProductoVenta' });
+
+Categoria.belongsToMany(Producto, { through: 'ProductoxCategoria' });
+Producto.belongsToMany(Categoria, { through: 'ProductoxCategoria' });
+
+
 
 
 

@@ -44,8 +44,8 @@ app.get('/', function(req, res) {
         nombre: 'Ipad',
         descripcion: 'Un celu grande',
         foto: 'https://http2.mlstatic.com/ipad-pro-129-64-gb-gris-ipad-pro-D_NQ_NP_967249-MLA26076837669_092017-F.webp',
-        categoria: ['Ipad'],
-        disponibilidad: false,
+        categoria: ['Ipad', 'Notebook'],
+        disponibilidad: true,
     })
 
     
