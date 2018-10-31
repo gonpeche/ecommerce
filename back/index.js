@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 var path = require('path');
-const db = require('./models/index').db;
+const db = require('./models/db');
 const models = require('./models/index').modelos;
 
+/*
 models.User.sync({ force: false })
     .then(function () {
         return models.Producto.sync({ force: false });
@@ -24,6 +25,15 @@ models.User.sync({ force: false })
         });
     })
     .catch(console.error);
+*/
+
+db.sync({force: true})
+.then(function () {
+    app.listen('3001', function () {
+        console.log('listening at 3001');
+    });
+})
+
 
 app.use(bodyParser.json());
 
@@ -32,7 +42,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('../front/dist'));
 
 app.get('/', function (req, res) {
-    models.Venta.create({
+   /* models.Venta.create({
         producto: ['JUGUETE'],
         estado: 'procesado',
         fecha: 20 - 10 - 18,
@@ -43,6 +53,7 @@ app.get('/', function (req, res) {
     })
         .catch((error) => console.log(error))
         .then(data => {
+            */
             res.sendFile(path.resolve('../front/index.html'));
-        })
+        //})
 });
